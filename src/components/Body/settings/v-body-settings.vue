@@ -1,57 +1,49 @@
 <template>
-    <!-- BODY AVATAR -->
-    <div class="AvaBlock col-md-12 bottomfake">
-        <div class="col-md-6" style="display:flex;">
-            <label class="inline-block">Avatar:</label>
-            <select id="ava" class="select-simple">
-                <option value="0">No avatar</option>
-                <option value="1">Upload an avatar</option>
-                <option value="2">Link to avatar</option>
-            </select>
-        </div>
+    <v-body-avatar></v-body-avatar>
+    <v-body-battery></v-body-battery>
+    <v-body-name></v-body-name>
+    <v-body-time></v-body-time>
+    <v-body-was></v-body-was>
+    <v-body-chats-spam></v-body-chats-spam>
+    <v-body-geo></v-body-geo>
+    <v-body-internet></v-body-internet>
+    <v-body-phone-b-g></v-body-phone-b-g>
+    <div class="line"></div>
+    <div class="col-md-12 bottomfake">
+
         <div class="col-md-6">
-            <input type="text" id="myAvaLink" class="AvaBlockSsilka inputAvaControl form-control" value="" style="display: none;">
-            <div class="AvaBlockFile btn btn-primary btn-file" style="display: none;">
-                <i class="icon-folder-open"></i>
-                <span>Browse ...</span>
-                <input type="file" id="myAvaFile" class="avatarControl file form-control" value="">
-            </div>
+            <button type="button" id="SaveProject" class="btn btn-primary btn-lg btn-block">
+                Save Project
+            </button>
+
+            <div class="stop-line"></div>
+
+        </div>
+
+        <div class="col-md-6">
+            <button type="button" id="CreateImage" class="btn btn-primary btn-lg btn-block">
+                Create Image
+            </button>
+            <div class="stop-line"></div>
         </div>
     </div>
-
-    <!-- BODY AVATAR BG -->
-    <div class="AvaBlockBg col-md-12 bottomfake" style="display: block ruby;">
-        <div class="col-md-2">
-            <label>Avatar background</label>
-        </div>
-        <div class="col-md-10">
-            <input class="avaBG" name="avaBG" id="avaBg1" type="radio" data-img="@/assets/img/ava/bg/1.png" checked=""><label for="avaBg1"><img src="@/assets/img/ava/bg/1.png"></label><input class="avaBG" name="avaBG" id="avaBg2" type="radio" data-img="@/assets/img/ava/bg/2.png"><label for="avaBg2"><img src="@/assets/img/ava/bg/2.png"></label><input class="avaBG" name="avaBG" id="avaBg3" type="radio" data-img="@/assets/img/ava/bg/3.png"><label for="avaBg3"><img src="@/assets/img/ava/bg/3.png"></label><input class="avaBG" name="avaBG" id="avaBg4" type="radio" data-img="@/assets/img/ava/bg/4.png"><label for="avaBg4"><img src="@/assets/img/ava/bg/4.png"></label><input class="avaBG" name="avaBG" id="avaBg5" type="radio" data-img="@/assets/img/ava/bg/5.png"><label for="avaBg5"><img src="@/assets/img/ava/bg/5.png"></label><input class="avaBG" name="avaBG" id="avaBg6" type="radio" data-img="@/assets/img/ava/bg/6.png"><label for="avaBg6"><img src="@/assets/img/ava/bg/6.png"></label><input class="avaBG" name="avaBG" id="avaBg7" type="radio" data-img="@/assets/img/ava/bg/7.png"><label for="avaBg7"><img src="@/assets/img/ava/bg/7.png"></label>							</div>
-    </div>
-    <div class="stop-line"></div>
-
-    <!-- BODY BATTERY -->
-    <div class="batareyBlock col-md-12 bottomfake">
-        <div class="col-md-4" style="display:flex;">
-            <label>Battery charge %:</label>
-            <input id="batarey" type="number" class="InputBatareyInner form-control" value="60" min="5" max="100">
-        </div>
-        <div class="col-md-3">
-            <input id="zarydka" type="checkbox" class="InputBatareyZarydka checkbox-style">
-            <label for="zarydka" class="fake-label">Charging</label>
-        </div>
-        <div class="col-md-3">
-            <input id="ekonom" type="checkbox" class="InputBatareyEkonom checkbox-style">
-            <label for="ekonom" class="fake-label">Economy</label>
-        </div>
-    </div>
-
-
-
 </template>
 
 <script>
+import vBodyAvatar from './avatar-settings/v-body-avatar-settings.vue'
+import vBodyBattery from './battery-settings/v-body-battery-settings.vue'
+import vBodyName from './nameBlock-settings/v-body-name-settings.vue'
+import vBodyTime from './time-settings/v-body-time-settings.vue'
+import vBodyWas from './was-settings/v-body-was-settings.vue'
+import vBodyChatsSpam from './chats-spam-settings/v-body-chats-spam--settings.vue'
+import vBodyGeo from './geo-settings/v-body-geo-settings.vue'
+import vBodyInternet from './internet-settings/v-body-internet-settings.vue'
+import vBodyPhoneBG from './phoneBG-settings/v-body-phoneBG-settings.vue'
 export default {
-    name: "v-body-settings"
+    name: "v-body-settings",
+    components: {
+        vBodyAvatar, vBodyBattery, vBodyName, vBodyTime, vBodyWas, vBodyChatsSpam, vBodyGeo, vBodyInternet, vBodyPhoneBG
+    }
 }
 </script>
 
