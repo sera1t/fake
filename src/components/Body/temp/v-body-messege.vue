@@ -10,6 +10,7 @@
                 <img src="@/assets/img/bottom.png">
             </div>
             <div style="padding:16px; display:none;" class="myPadding norow"></div>
+            <div id="iphone-block-38" class="BlockDate"><span>New Message</span></div>
         </div>
     </div>
 </template>
