@@ -9,7 +9,7 @@
         </td>
         <td>
             <select v-model="show"  id="sel-2" class="selectControl select-simple" style="min-width:80px;">
-                <option v-for="option in options" v-bind:value="option.value">
+                <option v-for="option in options" v-bind:key="option.value" :value="option.value">
                     {{ option.text }}
                 </option>
             </select>

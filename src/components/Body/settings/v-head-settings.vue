@@ -22,19 +22,22 @@
 
 <script>
 import vNewMessage from './new-message-settings/v-new-message-settings.vue'
+import { EV } from '@/assets/script/event'
 export default {
     name: "v-head-settings",
     components: {
         vNewMessage
     },
     methods: {
-        add_message() {
+        add_message: function() {
             this.items.push({
                 id: Date.now(),
             });
+            EV.emit('add-message', this.items)
         },
         del_message(el) {
             this.items = this.items.filter(p => p.id !== el.id)
+            EV.emit('del-message', el)
         }
     },
     data: ()=> ({
