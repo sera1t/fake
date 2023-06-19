@@ -13,7 +13,15 @@
             </tr>
             </thead>
             <tbody id="tbody" >
-                <v-new-message v-for="(item, index) in items" :is="index" :key="index" :id="'row-' + index" @remove="del_message(item)"></v-new-message>
+                <v-new-message
+                    v-for="(item, index) in items"
+                    :is="index"
+                    :key="index"
+                    :id="'row-' + index"
+                    :id_el = "'row-'+index"
+                    :count=index
+                    @remove="del_message(item)" >
+                </v-new-message>
             </tbody>
         </table>
     </div>
